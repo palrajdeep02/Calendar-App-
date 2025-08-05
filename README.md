@@ -1,32 +1,31 @@
-# 📅 Calendar App (Ementora Internship Project)
+# 📅 Ementora Calendar & Notification System
 
-This is a **calendar and event notification system** built for internship purposes. It allows users to view, manage, and organize events like assignments, webinars, and other scheduled items.
+This is a full-stack calendar application developed for the **Ementora Internship Project**. It includes:
 
----
-
-## 🔧 Features
-
-- 📆 Interactive calendar view of all upcoming events
-- ➕ Admin panel to add/edit/delete events
-- 🎯 Event filtering by type (e.g., Assignment, Webinar)
-- 🔔 Notification-ready architecture (expandable for email or push notifications)
+- A **Node.js backend** to manage and serve event data
+- A **vanilla JavaScript frontend** to display a calendar interface
 
 ---
 
 ## 🗂 Project Structure
 
 ```
-Calendar-App/
-├── public/              # Static files (HTML, favicon, etc.)
-│   ├── index.html
-│   ├── script.js
-│   ├── styles.css
-├── package.json         # Project metadata and dependencies
+EMENTORA-CALENDAR/
+├── backend/
+│   ├── events.json        # JSON file acting as local data storage
+│   └── server.js          # Backend API and server logic (Node.js + Express)
+├── public/
+│   ├── index.html         # Main web page
+│   ├── script.js          # Frontend logic (UI interactions, fetch calls)
+│   └── styles.css         # App styling
+├── package.json           # Project metadata and dependencies
+├── package-lock.json      # Locked versions of dependencies
+└── README.md              # Project documentation
 ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run the Project
 
 ### 1. Clone the repository
 
@@ -35,46 +34,65 @@ git clone https://github.com/palrajdeep02/Calendar-App-.git
 cd Calendar-App-
 ```
 
-### 2. Install dependencies (if using a build tool)
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Open the App
-
-Since this is a front-end app (HTML/CSS/JS), you can open `index.html` directly in the browser:
+### 3. Start the backend server
 
 ```bash
-start public/index.html  # On Windows
-# OR
-open public/index.html   # On macOS
+node backend/server.js
 ```
 
-If using a server like Live Server (VS Code extension), right-click `index.html` and select **"Open with Live Server"**.
+By default, the backend runs at:  
+📍 `http://localhost:3000`
+
+This server serves both the frontend and the backend API.
+
+### 4. Open the App
+
+Once the server is running, visit:  
+🌐 `http://localhost:3000`  
+in your browser to view the calendar UI.
 
 ---
 
-## 📅 Tech Stack
+## 🔧 Backend API
 
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- Optionally extensible with **FullCalendar.js** or similar libraries
+The backend uses a JSON file (`events.json`) to simulate a database.
+
+Endpoints might include:
+
+- `GET /api/events` – fetch all events
+- `POST /api/events` – add a new event
+- `DELETE /api/events/:id` – delete an event
+
+*(Adjust depending on your server.js setup.)*
 
 ---
 
-## 📌 Future Enhancements
+## 📌 Features
 
-- Add persistent storage (localStorage, Firebase, etc.)
-- Enable reminders and recurring events
-- Integrate with backend API for syncing
+- View events in a calendar layout
+- Add, remove, or filter events
+- Backend stores event data in JSON format
+- Easy to extend with notifications or authentication
+
+---
+
+## 📦 Technologies Used
+
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Node.js, Express
+- **Storage**: Local JSON file
 
 ---
 
 ## 🧠 Developed For
 
-🎓 **Ementora Internship Assignment** – Web Calendar & Notification System
+🎓 **Ementora Internship Assignment** – Calendar & Notification System
 
 ---
 
