@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ementora Event Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1>Ementora Event Calendar</h1>
+
+  <div class="calendar-container">
+    <div id="calendar"></div>
+  </div>
+
+  <div class="filter-container">
+    <label for="filter-type">Filter by Type:</label>
+    <select id="filter-type">
+      <option value="All">All</option>
+      <option value="Webinar">Webinar</option>
+      <option value="Assignment">Assignment</option>
+      <option value="Workshop">Workshop</option>
+    </select>
+  </div>
+
+  <div class="upcoming-container">
+    <h3>Upcoming Events (Next 2 Weeks)</h3>
+    <ul id="upcoming-events">
+      <li>Loading...</li>
+    </ul>
+  </div>
+
+  <form id="event-form">
+    <h3>Add Event</h3>
+    <input type="text" id="title" placeholder="Title" required />
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+    <select id="type">
+      <option value="Webinar">Webinar</option>
+      <option value="Assignment">Assignment</option>
+      <option value="Workshop">Workshop</option>
+    </select>
+    <textarea id="description" placeholder="Description (optional)"></textarea>
+    <button type="submit">➕ Add Event</button>
+  </form>
+
+  <div id="event-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Edit Event</h3>
+      <form id="edit-event-form">
+        <input type="hidden" id="edit-id" />
+        <input type="text" id="edit-title" required />
+        <input type="date" id="edit-date" required />
+        <input type="time" id="edit-time" required />
+        <select id="edit-type">
+          <option value="Webinar">Webinar</option>
+          <option value="Assignment">Assignment</option>
+          <option value="Workshop">Workshop</option>
+        </select>
+        <textarea id="edit-description" placeholder="Description"></textarea>
+        <button type="submit">💾 Save</button>
+        <button type="button" id="delete-btn" class="danger">🗑 Delete</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+  <!-- Main Script -->
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
